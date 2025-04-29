@@ -169,10 +169,12 @@ def main():
         
         if beam is not None:
             if bomb is not None:
-                  if beam.rct.colliderect(bomb.rct):
-                  #衝突時にどちらも消滅する
-                     beam = None #  ビーム消滅
-                     bomb = None #  爆弾消滅 
+                if beam.rct.colliderect(bomb.rct):
+                #衝突時にどちらも消滅する
+                    bird.change_img(6, screen)
+                    beam = None #  ビーム消滅
+                    bomb = None #  爆弾消滅
+                     
         
 
         key_lst = pg.key.get_pressed()
