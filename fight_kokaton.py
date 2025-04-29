@@ -140,12 +140,13 @@ class Bomb:
         self.rct.move_ip(self.vx, self.vy)
         screen.blit(self.img, self.rct)
 
+
 class Score:
     """""
     スコアをカウントするクラス
     """
     def __init__(self):
-        self.fonto = pg.font.SysFont("hgp創英角ﾎﾟｯﾌﾟ体", 30)
+        self.fonto = pg.font.SysFont("hgp創英角ﾎﾟｯﾌﾟ体", 30)  # フォントを指定
         self.color = (0, 0, 255)
         self.score = 0
         self.img = self.fonto.render(f"スコア: {self.score}", True, self.color)
@@ -212,7 +213,7 @@ def main():
         bird.update(key_lst, screen)
         for beam in beams:
             beam.update(screen)
-        beams = [beam for beam in beams if beam.rct.right < WIDTH]
+        beams = [beam for beam in beams if beam.rct.right < WIDTH]  # ビーム画面外に言った際に削除
         # if bomb is not None:
         for bomb in bombs:
             bomb.update(screen)
