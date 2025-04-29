@@ -213,7 +213,7 @@ def main():
         bird.update(key_lst, screen)
         for beam in beams:
             beam.update(screen)
-        beams = [beam for beam in beams if beam.rct.right < WIDTH]  # ビーム画面外に言った際に削除
+        beams = [beam for beam in beams if beam.rct.right < WIDTH]
         # if bomb is not None:
         for bomb in bombs:
             bomb.update(screen)
