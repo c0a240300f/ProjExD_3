@@ -140,6 +140,24 @@ class Bomb:
         self.rct.move_ip(self.vx, self.vy)
         screen.blit(self.img, self.rct)
 
+class Explosion:
+    def __init__(self):
+        """
+        爆発gifを表示
+        """
+        self.imgs = [pg.image.load("fig/explosion.gif"), pg.transform.flip(pg.image.load("fig/explosion.gif"), True, True)]
+        self.rct = self.imgs[0].get_rect()
+        self.rct.center = (WIDTH//2, HEIGHT//2)
+        self.life = 30
+        self.imgs_idx = 0
+
+    def update(self, screen: pg.surface):
+        self.life -= 1
+        # if self.life >= 0:
+        #     self
+
+
+
 class Score:
     """""
     スコアをカウントするクラス
