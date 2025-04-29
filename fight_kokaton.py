@@ -198,7 +198,7 @@ def main():
                 pg.display.update()
                 time.sleep(1)
                 return
-        for j, bomb in enumerate(bombs):
+        for j, bomb in enumerate(bombs): # 値の順序を記録
             # if bomb is not None:
             if beam is not None:
                 if beam.rct.colliderect(bomb.rct):
